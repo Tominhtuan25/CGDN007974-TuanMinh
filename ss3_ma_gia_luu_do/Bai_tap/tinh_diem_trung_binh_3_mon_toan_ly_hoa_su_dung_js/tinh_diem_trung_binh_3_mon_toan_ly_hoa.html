@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Điểm Trung Bình 3 môn</title>
+</head>
+<body>
+<input id="diemToan" type="number" placeholder="Nhập số điểm Toán">
+<input id="diemLy" type="number" placeholder="Nhập số điểm Lý">
+<input id="diemHoa" type="number" placeholder="Nhập số điểm Hoá">
+<button onclick="tinh()" >Điểm</button>
+<h2 id="sum">Kết quả: </h2>
+<script>
+    // Cách 2: Sử dụng cả 2 JS và HTML
+    function tinh(){
+        let diemToan = +document.getElementById("diemToan").value;
+        let diemLy = +document.getElementById("diemLy").value;
+        let diemHoa = +document.getElementById("diemHoa").value;
+        let diemTrungBinh = (diemToan + diemLy + diemHoa) / 3;
+        document.getElementById("sum").innerText = "kết quả: " +diemTrungBinh;
+    }
+    // Cách 1:sử dụng js
+  // let diemToan = +prompt("Nhập điểm Toán");
+   //let diemLy = +prompt("Nhập điểm Lý");
+   //let diemHoa = +prompt("Nhập điểm Hoá");
+   //let diemtrungbinh =(diemToan + diemLy + diemHoa) / 3;
+   //alert("Điểm trung bình 3 môn là: "+ diemtrungbinh)
+    // cách 1 tới đây
+</script>
+</body>
+</html>
