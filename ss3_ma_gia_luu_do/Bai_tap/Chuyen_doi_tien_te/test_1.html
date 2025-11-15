@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Amount:
+<input type="number" id="amount">
+
+From Currency:
+<select id="from">
+    <option value="VND">VietNam</option>
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+</select>
+
+To Currency:
+<select id="to">
+    <option value="USD">USD</option>
+    <option value="VND">VND</option>
+    <option value="EUR">EUR</option>
+</select>
+
+<button onclick="convert()">Convert</button>
+
+<p id="result"></p>
+
+<script>
+    function convert() {
+        let amount = document.getElementById("amount").value;
+        let from = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+
+        const rate = {
+            "VND": 1,
+            "USD": 23000,
+            "EUR": 25000
+        };
+
+        let result = (amount * rate[from]) / rate[to];
+
+        document.getElementById("result").innerHTML =
+            "Result : " + result + " " + to;
+    }
+</script>
+
+</body>
+</html>
