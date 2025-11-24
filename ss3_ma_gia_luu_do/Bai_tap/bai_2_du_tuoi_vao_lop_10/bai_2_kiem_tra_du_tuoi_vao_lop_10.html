@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check đủ tuổi vào lớp 10</title>
+</head>
+<body>
+<h2 style="background-color: #ff6b6b; text-align: center;"><label><b>Kiểm tra đủ tuổi vào lớp 10</b></label></h2>
+<input type="number" id="age" placeholder="input Age">
+<button onclick="checkAge()">Check</button>
+<p id="result">Result: </p>
+<script>
+  function checkAge() {
+    let age = parseInt(document.getElementById("age").value);
+    let result = "";
+    if (age > 15) {
+      result = "đủ tuổi vào lớp 10";
+      } else {
+      result = "chưa đủ tuổi vào lớp 10";
+    }
+    document.getElementById("result").innerHTML = age + "tuổi: " + result;
+  }
+</script>
+</body>
+</html>

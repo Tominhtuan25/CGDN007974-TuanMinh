@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thiệp 20-11 — Trần Thị Thanh Trinh (iu)</title>
+  <style>
+    :root{
+      --bg:#f5f9ff; --card:#fff; --accent:#ff6b6b; --soft:#ffe9f0;
+      --shadow: 0 10px 30px rgba(17,24,39,0.12);
+      --font: 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{font-family:var(--font); margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg,var(--bg),#e8f3ff);}
+
+    /* Card wrapper */
+    .stage{width:960px; max-width:95vw; display:grid; grid-template-columns:1fr 420px; gap:24px; align-items:center}
+
+    /* Left: big greeting area (card) */
+    .card-wrap{perspective:1200px}
+    .card{width:420px; height:560px; margin:0 auto; position:relative; transform-style:preserve-3d; transition:transform 900ms cubic-bezier(.2,.9,.25,1); cursor:pointer}
+    .card.open{transform:rotateY(-160deg)}
+    .panel{position:absolute; inset:0; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); background:var(--card); display:flex; flex-direction:column; align-items:center; justify-content:center}
+
+    .front{background:linear-gradient(180deg,#fff,#fffbf6); padding:28px}
+    .front .title{font-size:20px; color:#2b3a67; letter-spacing:0.06em}
+    .front .subtitle{font-size:14px; color:#7b8798; margin-top:8px}
+
+    .inside{transform:rotateY(180deg); backface-visibility:hidden; background: linear-gradient(180deg,#fff9fb,#fff); padding:28px}
+    .message{font-size:22px; color:#1b263b; text-align:center; line-height:1.35}
+    .recipient{margin-top:14px; font-weight:700; color:var(--accent); font-size:20px}
+
+    /* Decorations */
+    .flowers, .balloons{position:absolute; left:12px; right:12px; bottom:12px; top:12px; pointer-events:none}
+
+    /* Balloons container */
+    .balloons{z-index:6}
+    .balloon{position:absolute; bottom:-150px; width:64px; height:84px; border-radius:50% 50% 45% 45%; display:flex; align-items:flex-end; justify-content:center; transform-origin:center bottom; animation:floatUp linear forwards;}
+    .balloon::after{content:''; width:2px; height:120px; background:rgba(0,0,0,0.07); transform:translateY(12px);}
+
+    @keyframes floatUp{
+      from{transform:translateY(0) scale(1)}
+      to{transform:translateY(-720px) scale(1.05)}
+    }
+
+    /* Flower cluster (simple SVG-like shapes) */
+    .flowers svg{width:100%; height:100%;}
+
+    /* Right side: controls + instructions */
+    .panel-right{background:transparent}
+    .hint{background:#fff; border-radius:12px; padding:18px; box-shadow:var(--shadow)}
+    .hint h3{margin:0 0 8px 0}
+    .controls{display:flex; gap:8px; margin-top:12px}
+    .btn{padding:8px 12px; border-radius:8px; border:0; cursor:pointer}
+    .btn--pink{background:var(--accent); color:#fff}
+    .btn--soft{background:var(--soft); color:#7b8798}
+
+    /* Responsive small screen: stack */
+    @media (max-width:920px){
+      .stage{grid-template-columns:1fr}
+      .card{margin:20px auto}
+    }
+
+  </style>
+</head>
+<body>
+<div class="stage">
+  <div class="card-wrap">
+    <div class="card" id="card" title="Bấm để mở thiệp">
+      <div class="panel front">
+        <h2 class="title">Chúc mừng Ngày Nhà Giáo Việt Nam</h2>
+        <p class="subtitle">20 - 11</p>
+        <div style="margin-top:28px; text-align:center">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><rect rx='80' width='160' height='160' fill='%23FFF3F6'/><g transform='translate(20,20)'><circle cx='40' cy='40' r='10' fill='%23FF6B6B'/><circle cx='70' cy='40' r='10' fill='%23FFD166'/><circle cx='55' cy='65' r='10' fill='%2390E0EF'/></g></svg>" alt="flower"/></div>
+        <small style="display:block; margin-top:14px; color:#8b95a6">Trên bìa: bấm để mở thiệp</small>
+      </div>
+
+      <div class="panel inside">
+        <div style="flex:1; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px">
+          <div class="message" id="msg"></div>
+          <div class="recipient">Gửi cô: Trần Thị Thanh TRinh (iu)</div>
+        </div>
+      </div>
+
+      <!-- Balloons shadow layer -->
+      <div class="balloons" id="balloons"></div>
+
+      <!-- Flowers layer -->
+      <div class="flowers" aria-hidden="true">
+        <!-- simple SVG flower cluster -->
+        <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice">
+          <g transform="translate(80,380)">
+            <g transform="translate(0,0) scale(0.9)">
+              <path d="M40 0 C60 -10 90 -10 100 10 C110 30 90 60 60 70 C30 80 0 70 -10 50 C-20 30 -10 10 10 0 C25 -8 35 -2 40 0" fill="#ffb3c6" />
+              <rect x="28" y="60" width="4" height="120" rx="2" fill="#5a8a4f" transform="rotate(8 30 60)"/>
+            </g>
+          </g>
+          <g transform="translate(460,420)">
+            <g transform="scale(1)">
+              <path d="M40 0 C60 -10 90 -10 100 10 C110 30 90 60 60 70 C30 80 0 70 -10 50 C-20 30 -10 10 10 0 C25 -8 35 -2 40 0" fill="#ffd166" />
+              <rect x="28" y="60" width="4" height="120" rx="2" fill="#6da86d" transform="rotate(-8 30 60)"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel-right">
+    <div class="hint">
+      <h3>Hướng dẫn</h3>
+      <p>Nhấp vào thiệp để mở — khi mở, bong bóng và hoa sẽ bay lên kèm lời chúc dành cho cô Trần Thị Thanh TRinh (iu).</p>
+      <div class="controls">
+        <button class="btn btn--pink" id="openBtn">Mở / Đóng thiệp</button>
+        <button class="btn btn--soft" id="replayBtn">Phát lại hoạt ảnh</button>
+      </div>
+      <p style="margin-top:12px; color:#6b7280; font-size:14px">Muốn thay lời chúc, nhờ mình chỉnh nội dung hoặc thêm nhạc nền?</p>
+    </div>
+
+    <div style="height:18px"></div>
+
+    <div class="hint" style="margin-top:12px">
+      <h3>Lời chúc gợi ý</h3>
+      <p>“Kính chúc cô luôn mạnh khỏe, hạnh phúc, tiếp tục truyền cảm hứng cho nhiều thế hệ học trò.”</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const card = document.getElementById('card');
+  const balloonsEl = document.getElementById('balloons');
+  const openBtn = document.getElementById('openBtn');
+  const replayBtn = document.getElementById('replayBtn');
+
+  // create balloons dynamically
+  const colors = ['#ff6b6b','#ff9f1c','#ffd166','#90e0ef','#c77dff'];
+  function spawnBalloons(){
+    balloonsEl.innerHTML = '';
+    for(let i=0;i<8;i++){
+      const b = document.createElement('div');
+      b.className = 'balloon';
+      const size = 46 + Math.round(Math.random()*40);
+      b.style.width = size + 'px';
+      b.style.height = Math.round(size*1.25) + 'px';
+      const left = 12 + Math.round(Math.random()*390);
+      b.style.left = left + 'px';
+      b.style.background = colors[i % colors.length];
+      b.style.animationDuration = (6 + Math.random()*6) + 's';
+      b.style.animationDelay = (0.3*i) + 's';
+
+      // little shine
+      const shine = document.createElement('div');
+      shine.style.width = Math.max(6, Math.round(size*0.18))+'px';
+      shine.style.height = Math.max(6, Math.round(size*0.18))+'px';
+      shine.style.borderRadius = '50%';
+      shine.style.background = 'rgba(255,255,255,0.45)';
+      shine.style.transform = 'translate(-30%,-50%)';
+      shine.style.position = 'absolute';
+      shine.style.right = '16%';
+      shine.style.top = '18%';
+      b.appendChild(shine);
+
+      balloonsEl.appendChild(b);
+    }
+  }
+
+  // typewriter effect
+  function typeText(text){
+    const el = document.getElementById('msg');
+    el.innerHTML='';
+    let i=0;
+    function run(){
+      if(i < text.length){
+        el.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(run, 40);
+      }
+    }
+    run();
+  }
+
+  const messageText = "Chúc iu ngày 20-11 thật ý nghĩa, hạnh phúc. Mong yêu luôn giữ ngọn lửa yêu nghề, tâm huyết và gặt hái được nhiều thành công trên con đường dạy học. Anh mãi ở bên và ủng hộ iu. Thương iu";
+
+  // open / close
+  function toggleCard(open){
+    if(open) card.classList.add('open'); else card.classList.remove('open');
+  }
+
+  // when card opens, spawn and animate balloons
+  card.addEventListener('click', ()=>{
+    const isOpen = card.classList.toggle('open');
+    if(isOpen){
+      spawnBalloons();
+      // auto remove balloons after animation so they can replay
+      setTimeout(()=>{ balloonsEl.innerHTML=''; }, 9000);
+    }
+  });
+
+  openBtn.addEventListener('click', ()=>{
+    const isOpen = !card.classList.contains('open');
+    toggleCard(isOpen);
+    if(isOpen){ spawnBalloons(); setTimeout(()=>{ balloonsEl.innerHTML=''; },9000); }
+  });
+
+  replayBtn.addEventListener('click', ()=>{
+    // replay: close then open quickly
+    toggleCard(false);
+    setTimeout(()=>{ toggleCard(true); spawnBalloons(); setTimeout(()=>{ balloonsEl.innerHTML=''; },9000); }, 220);
+  });
+
+  // accessibility: keyboard open
+  card.setAttribute('tabindex', '0');
+  card.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') card.click(); });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính cước điện thoại hộ gia đình</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            border : 1px solid black;
+            width : 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            width : 100px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="background-color: darkmagenta;text-align: center">Giả sử giá cước điện thoại di đông của mạng Viettel như bảng sau:</h1>
+<table>
+    <tr>
+        <th>Nhà mạng</th>
+        <th>Mục lục</th>
+        <th>Giá cước</th>
+    </tr>
+    <tr>
+        <td rowspan="4">Viettel</td>
+        <td>Phí thuê bao cố định</td>
+        <td>20.000 VND</td>
+    </tr>
+    <tr>
+        <td>Gọi nội mạng</td>
+        <td>800 VND/phút</td>
+    </tr>
+    <tr>
+        <td>Gọi ngoại mạng</td>
+        <td>1.500 VND/phút</td>
+    </tr>
+    <tr>
+        <td>Gọi quốc tế</td>
+        <td>5.000 VND/phút</td>
+    </tr>
+</table><br><br>
+<h2 style="background-color: orange;text-align: left">Tính cước điện thoại di động của hộ gia đình:</h2>
+<input id="noi" type="number" placeholder="Nhập số phút gọi nội mạng" >
+<input id="ngoai" type="number" placeholder="Nhập số phút gọi ngoại mạng" >
+<input id="qt" type="number" placeholder="Nhập số phút gọi quốc tế" >
+<button onclick="tinhcuoc()">Tính cước</button>
+<p id="result" style="text-align: left;color: fuchsia">Tổng cước điện thoại là: </p>
+<script>
+    function tinhcuoc() {
+        let noi = parseFloat(document.getElementById("noi").value);
+        let ngoai = parseFloat(document.getElementById("ngoai").value);
+        let qt = parseFloat(document.getElementById("qt").value);
+        //Giá cước
+        let cuocCoDinh = 20000;
+        let cuocNoi = 800;
+        let cuocNgoai = 1500;
+        let cuocQT = 5000;
+        //tính tiền giá cước
+        let sum = cuocCoDinh + noi * cuocNoi + ngoai * cuocNgoai + qt * cuocQT;
+        document.getElementById("result").innerHTML = "Tổng cước điện thoại hộ gia đình phải trả là : " + sum + "VND";
+    }
+</script>
+</body>
+</html>

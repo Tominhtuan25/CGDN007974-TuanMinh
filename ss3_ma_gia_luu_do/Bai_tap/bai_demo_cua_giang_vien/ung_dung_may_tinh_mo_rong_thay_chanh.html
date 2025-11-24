@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="4">
+            <input id="window">
+        </td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="nhap(this.value)"  value="1"></td>
+        <td><input type="button" onclick="nhap(this.value)"  value="2"></td>
+        <td><input type="button" onclick="nhap(this.value)" value="3"></td>
+        <td><input type="button" onclick="nhap(this.value)"  value="+"></td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="nhap(this.value)"  value="5"></td>
+        <td><input type="button" onclick="nhap(this.value)"  value="6"></td>
+        <td><input type="button" onclick="nhap(this.value)"  value="7"></td>
+        <td><input type="button" onclick="nhap(this.value)"  value="-"></td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="nhap(this.value)"  value="7"></td>
+        <td><input type="button" onclick="nhap(this.value)"  value="8"></td>
+        <td><input type="button" onclick="nhap(this.value)"  value="9"></td>
+        <td><input type="button" onclick="nhap(this.value)"  value="*"></td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="nhap(this.value)"  value="0"></td>
+        <td><input type="button" onclick="nhap(this.value)"  value=","></td>
+        <td><input onclick="tinhToan()" type="button" value="="></td>
+        <td><input type="button" value="/"></td>
+        <td><input type="button" onclick="nhap(this.value)"  value="/"></td>
+    </tr>
+</table>
+<script>
+    function nhap(x){
+        document.getElementById("window").value += x;
+    }
+
+    // function nhapSo1() {
+    //     document.getElementById("window").value += 1;
+    // }
+    //
+    // function nhapSo2() {
+    //     document.getElementById("window").value += 2;
+    // }
+    //
+    // function nhapCong() {
+    //     document.getElementById("window").value += "+";
+    // }
+
+    function tinhToan() {
+        let chuoi = document.getElementById("window").value;
+        document.getElementById("window").value = eval(chuoi);
+    }
+</script>
+</body>
+</html>

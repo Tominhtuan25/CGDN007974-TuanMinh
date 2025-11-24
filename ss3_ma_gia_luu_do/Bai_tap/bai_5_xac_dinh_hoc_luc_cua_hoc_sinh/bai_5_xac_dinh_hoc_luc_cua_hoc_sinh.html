@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xác định học lực của học sinh</title>
+</head>
+<body>
+<h1 style="background-color: hotpink;text-align: center">Xếp loại học lực của học sinh</h1>
+<input id="kt" type="number" placeholder="input test score">
+<input id="gk" type="number" placeholder="input Midterm exam score">
+<input id="ck" type="number" placeholder="input Final exam score">
+<button onclick="xeploai()">Xếp Loại</button>
+<p id="result"></p>
+<script>
+    function xeploai(){
+        let kt = parseFloat(document.getElementById("kt").value);
+        let gk = parseFloat(document.getElementById("gk").value);
+        let ck = parseFloat(document.getElementById("ck").value);
+        let dtb = kt * 0.2 + gk * 0.3 + ck * 0.5;
+        let type = "";
+        if(dtb >= 9) {
+            type = "Excellent";
+        } else if (dtb >= 8) {
+            type = " Very Good";
+        } else if (dtb >= 7) {
+            type = "Good";
+        } else if (dtb >= 6.5) {
+            type = " Fairly Good";
+        } else if (dtb >= 5) {
+            type = " Average";
+        } else {
+            type = "Bad";
+        }
+        document.getElementById("result").innerHTML = "Điểm trung bình là : " + dtb +    "Xếp loại :" + type;
+    }
+</script>
+</body>
+</html>
