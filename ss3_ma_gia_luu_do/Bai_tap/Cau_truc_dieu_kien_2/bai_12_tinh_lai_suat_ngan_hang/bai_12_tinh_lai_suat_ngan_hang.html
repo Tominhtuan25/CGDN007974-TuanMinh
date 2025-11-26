@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi suất ngân hàng Á Châu(ACB)</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b;text-align: center">Lãi suất ngân hàng ACB như sau:</h1>
+<input id="amount" type="number" placeholder="Input Intial Amount (VND)">
+<input id="months" type="number" placeholder="Input Monthly">
+<input id="rate" type="number" placeholder="Input Monthly Rate(%)">
+<button onclick="caculateInterest()">Caculate Interest</button>
+<p id="result"></p>
+<script>
+    function caculateInterest() {
+        let amount = parseFloat(document.getElementById("amount").value);
+        let months = parseInt(document.getElementById("months").value);
+        let rate = parseFloat(document.getElementById("rate").value);
+        let total ="";
+        if (isNaN(amount) || isNaN(months) || isNaN(rate) || amount <= 0 || rate <= 0 || months <= 0) {
+            document.getElementById("result").innerHTML = "Please enter a valid number for all fields(>0)";
+            return;
+        }
+        total = amount * Math.pow(1 + rate/100,months);// công thức tính lãi suất kép: Total= amount x ((1+rate/100)^months)
+        document.getElementById("result").innerHTML = "Tổng số tiền gốc + lãi sau khi cộng dồn lãi vào gốc sau  :" + months + "months" +" " + "là:" + " "+ total.toLocaleString() + "VND";
+    }
+</script>
+</body>
+</html>

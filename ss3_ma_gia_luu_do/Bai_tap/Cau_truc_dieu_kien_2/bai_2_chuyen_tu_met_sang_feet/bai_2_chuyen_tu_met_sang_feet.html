@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển từ Mét sang Feet</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b; text-align: center">Chuyển từ Mét sang Feet</h1>
+<input id="m" type="number" placeholder="Nhập Mét">
+<button onclick="convert()">Convert</button>
+<p id="result"></p>
+<script>
+  function convert() {
+    let m = parseFloat(document.getElementById("m").value);
+    if (m <= 0) || (isNaN(m)) {
+        document.getElementById("result").innerText = "Vui lòng nhập số Mét > 0"
+          return;
+      }
+    let ft = m * 3.2808;
+    document.getElementById("result").innerHTML = "Sau khi chuyển đổi ta được : " + ft;
+  }
+  </script>
+</body>
+</html>

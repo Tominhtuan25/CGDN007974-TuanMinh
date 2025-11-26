@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hình chữ nhật</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b; text-align: center">Tính diện tich hình chữ nhật với hai canh a,b</h1>
+<input id="a_cm" type="number" placeholder="Nhập cạnh a(cm)">
+<input id="b_cm" type="number" placeholder="Nhập cạnh b(cm)">
+<button onclick="caculate()">CaculateS</button>
+<p id="result"></p>
+<script>
+  function caculate() {
+    let a_cm = parseFloat(document.getElementById("a_cm").value);
+    let b_cm = parseFloat(document.getElementById("b_cm").value);
+    if (a_cm <= 0 || b_cm <= 0 ||isNaN(a_cm) || isNaN(b_cm)) {
+      document.getElementById("result").innerText = "Vui lòng nhập 2 cạnh a,b > 0";
+      return;
+    }
+    let s_cm = a_cm * b_cm;
+    document.getElementById("result").innerHTML = "Diện tích hình chữ nhật là : " + s_cm + "cm" + "<sup>2</sup>";
+  }
+</script>
+</body>
+</html>

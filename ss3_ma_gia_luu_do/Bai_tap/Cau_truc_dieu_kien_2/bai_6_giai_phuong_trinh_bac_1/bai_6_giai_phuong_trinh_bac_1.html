@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giaỉ phương trình bậc 1</title>
+</head>
+<body>
+<h1 style="background-color: #1aaa15; text-align: center">Giải phương trình bậc 1</h1>
+<input id="a" type="number" placeholder="input a">
+<input id="b" type="number" placeholder="input b">
+<button onclick="caculate()">Caculate</button>
+<p id="result"></p>
+<script>
+    function caculate() {
+        let a = parseFloat(document.getElementById("a").value);
+        let b = parseFloat(document.getElementById("b").value);
+        if (a === 0) {
+            if (b === 0) {
+                document.getElementById("result").innerText = "Phươnng trình có vô số nghiệm";
+            } else if (b !== 0) {
+                document.getElementById("result").innerText = "Phương trình vô nghiệm";
+            }
+        }
+        else {
+                let x = -b / a;
+                document.getElementById("result").innerText = "Phương trình có nghiệm x = " + x;
+        }
+    }
+</script>
+</body>
+</html>
