@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thừa của 1 số nguyên dương</title>
+</head>
+<body>
+<h1 style="text-align: center; background-color: #ff6b6b">Tính giai thừa của một số nguyên dương</h1>
+<input type="number" id="z+" placeholder="nhập số nguyên dương cần tính giai thừa">
+<button onclick="caculate()">caculate</button>
+<p id="result"></p>
+<script>
+    function caculate() {
+        let z = parseInt(document.getElementById("z+").value);
+        let factorial = 1;
+        if (z <= 0) {
+            document.getElementById("result").innerHTML = "Hãy nhập số nguyên lớn hơn 0";
+        } else {
+            for (let i = 1; i <= z; i++) {
+                factorial *= i;
+            }
+            document.getElementById("result").innerHTML = "Giai thừa của " + z + "=" + factorial;
+        }
+    }
+</script>
+</body>
+</html>

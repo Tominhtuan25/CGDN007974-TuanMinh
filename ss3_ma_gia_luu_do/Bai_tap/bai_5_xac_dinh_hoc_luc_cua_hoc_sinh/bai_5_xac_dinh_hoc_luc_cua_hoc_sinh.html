@@ -6,17 +6,17 @@
 </head>
 <body>
 <h1 style="background-color: hotpink;text-align: center">Xếp loại học lực của học sinh</h1>
-<input id="kt" type="number" placeholder="input test score">
-<input id="gk" type="number" placeholder="input Midterm exam score">
-<input id="ck" type="number" placeholder="input Final exam score">
+<input id="kiemtra" type="number" placeholder="input test score">
+<input id="giuaki" type="number" placeholder="input Midterm exam score">
+<input id="cuoiki" type="number" placeholder="input Final exam score">
 <button onclick="xeploai()">Xếp Loại</button>
 <p id="result"></p>
 <script>
     function xeploai(){
-        let kt = parseFloat(document.getElementById("kt").value);
-        let gk = parseFloat(document.getElementById("gk").value);
-        let ck = parseFloat(document.getElementById("ck").value);
-        let dtb = kt * 0.2 + gk * 0.3 + ck * 0.5;
+        let kiemtra = parseFloat(document.getElementById("kiemtra").value);
+        let giuaki = parseFloat(document.getElementById("giuaki").value);
+        let cuoiki = parseFloat(document.getElementById("cuoiki").value);
+        let dtb = kiemtra * 0.2 + giuaki * 0.3 + cuoiki * 0.5;
         let type = "";
         if(dtb >= 9) {
             type = "Excellent";

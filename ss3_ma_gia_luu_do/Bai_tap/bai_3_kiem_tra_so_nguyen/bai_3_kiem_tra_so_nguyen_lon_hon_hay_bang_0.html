@@ -6,18 +6,18 @@
 </head>
 <body>
 <h1 style="text-align: center; background-color: #ff6b6b; color: white;">Check số nguyên</h1>
-<input type="number"id="z" placeholder="input Z">
+<input type="number" id="z" placeholder="input Z">
 <button onclick="checkZ()">Check</button>
 <p id="result">Là số nguyên: </p>
 <script>
     function checkZ() {
-        let z= parseInt(document.getElementById("z").value);
+        let z = parseInt(document.getElementById("z").value);
         let result = "";
         if (z > 0) {
             result = "Z là số nguyên dương";
         } else if (z < 0) {
             result = "Z là số nguyên âm"
-            } else {
+        } else {
             result = "Z là số không(Zero)"
         }
         document.getElementById("result").innerHTML = "Giá trị Z là: " + z + " → " + result;

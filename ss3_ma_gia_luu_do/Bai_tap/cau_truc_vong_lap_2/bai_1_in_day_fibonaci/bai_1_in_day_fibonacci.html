@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In dãy Fibonacci</title>
+</head>
+<body>
+<h1 style="background: #ff6b6b;text-align: center">Dãy Fibonacci với 50 số</h1>
+</body>
+<script>
+    let a = 0;
+    let b = 1;
+    for (i = 1; i <= 50; i++) {
+        document.writeln(a + " <br>");
+        let soTiepTheo = a + b;
+        a = b;
+        b = soTiepTheo;
+    }
+</script>
+</html>

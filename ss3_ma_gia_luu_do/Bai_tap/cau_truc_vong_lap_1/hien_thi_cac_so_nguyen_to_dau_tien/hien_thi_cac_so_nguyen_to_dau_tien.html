@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị các số nguyên tố đầu tiên</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b;text-align: center">HIỂN THỊ CÁC SỐ NGUYÊN TỐ ĐẦU TIÊN</h1>
+<script>
+    //let numbers = parseInt(prompt("Nhập số cần kiểm tra(numbers)"));
+    let soluongSNT = 0;
+    let numbers = 2;
+    while (soluongSNT < 20) {
+        let count = 0;
+        for (let i = 2; i < numbers; i++) {
+            if (numbers % i == 0) {
+                count++;
+            }
+        }
+        if (count == 0) {
+            document.writeln(numbers + ",");
+            soluongSNT++;
+        }
+        numbers++;
+    }
+</script>
+</body>
+</html>

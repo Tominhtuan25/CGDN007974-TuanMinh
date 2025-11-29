@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị 20 số Fibonaci đầu tiên</title>
+</head>
+<body>
+<h1 style="background: #ff6b6b;text-align: center">Hiển thị dãy số Fibonaci</h1>
+<script>
+  let a = 0;
+  let b = 1;
+  let soluongFiBo = 0;
+  while (soluongFiBo < 20) {
+    document.write(a + " ");
+    let soTiepTheo = a + b;
+    a = b;
+    b = soTiepTheo;
+    soluongFiBo++;
+  }
+</script>
+</body>
+</html>
