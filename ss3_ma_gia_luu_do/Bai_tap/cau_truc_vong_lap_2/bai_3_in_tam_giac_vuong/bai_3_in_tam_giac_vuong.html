@@ -31,12 +31,26 @@
 <script>
     for (let i = 1; i <= 5; i++) {
         let row = "";
-            for (let k = 5; k >= j; k--) {
-                row += ""
-            }
+        for (let k = 1; k <= 5 - i; k++) {
+            row += "&nbsp;&nbsp";
+        }
         for (let j = 1; j <= i; j++) {
-                row += "*";
-            }
+            row += "*";
+        }
+        document.writeln(row + "<br>");
+    }
+</script>
+<hr>
+<h1 style="background-color:hotpink ;text-align: center">In tam giác vuông với góc vuông nằm ở bên phải trên cùng</h1>
+<script>
+    for (let i = 1; i <= 5; i++) {
+        let row = "";
+        for (let k = 4; k > 5 - i; k--) {
+            row += "&nbsp;&nbsp";
+        }
+        for (let j = 5; j >= i; j--) {
+            row += "*";
+        }
         document.writeln(row + "<br>");
     }
 </script>
