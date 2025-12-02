@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In hình trái tim</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b;text-align: center">HÌNH TRÁI TIM</h1>
+<script>
+    let width = 7; // Chiều rộng
+    let height = 7; // Chiều cao phần dưới
+    let heart = "";
+
+    // Phần trên trái tim
+    for (let i = 1; i <= 3; i++) {
+        let row = "";
+        if (i === 1) {
+            row += "&nbsp;&nbsp;*";
+            row += "&nbsp;*<br>";
+        } else if (i === 2) {
+            row += "&nbsp;***&nbsp;***<br>";
+        } else if (i === 3) {
+            row += "*******<br>";
+        }
+        document.write(row);
+    }
+
+    // Phần dưới trái tim
+    for (let i = height; i >= 1; i--) {
+        let row = "";
+        for (let j = 0; j < height - i; j++) {
+            row += "&nbsp;";
+        }
+        for (let k = 0; k < 2 * i - 1; k++) {
+            row += "*";
+        }
+        document.write(row + "<br>");
+    }
+</script>
+</body>
+</html>
