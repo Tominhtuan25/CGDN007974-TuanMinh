@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số kí tự (0-9) trong mảng</title>
+</head>
+<body>
+<h1 style="background-color: #e8f3ff; text-align: center">Đếm số kí tự từ (0-9) trong mảng</h1>
+<script>
+  let arr = ["a" , "22" , "1" , "0" , "f" , "5" , "2"]
+  let length = arr.length;
+  let count = 0;
+  let arrcount = " ";
+  for (let i = 0; i < length; i++) {
+    if (arr[i] >= 0 && arr[i] <= 9) {
+      count++;
+      arrcount += arr[i] + " , ";
+    }
+  }
+  document.write("Số kí tự từ (0-9) trong mảng là :" + count + "<br>");
+  document.write("Các số đó  là :" + arrcount + " ");
+</script>
+</body>
+</html>

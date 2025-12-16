@@ -2,39 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>In hình trái tim</title>
+    <title>tìm số lớn hơn 10 trong mảng</title>
 </head>
 <body>
-<h1 style="background-color: #ff6b6b;text-align: center">HÌNH TRÁI TIM</h1>
+<!--<script>-->
+<!--    let array=[1,6,75,89,65,44,2,1,6,8];-->
+<!--    let soLuong = 0;-->
+<!--    for(let i=0;i<array.length;i++){-->
+<!--        if(array[i]>10){-->
+<!--            soLuong++;-->
+<!--            document.write(i+", ");-->
+<!--        }-->
+<!--    }-->
+<!--    document.write(" số lượng số lướn hơn 10 la: " +soLuong);-->
+<!--</script>-->
+
+<input id="number" placeholder="enter the number">
+<button onclick="addNumber()" value="addNumber">add</button>
+<button onclick="check()" value="check">check</button>
+<h3 id="result"> kết quả: </h3>
 <script>
-    let width = 7; // Chiều rộng
-    let height = 7; // Chiều cao phần dưới
-    let heart = "";
-
-    // Phần trên trái tim
-    for (let i = 1; i <= 3; i++) {
-        let row = "";
-        if (i === 1) {
-            row += "&nbsp;&nbsp;*";
-            row += "&nbsp;*<br>";
-        } else if (i === 2) {
-            row += "&nbsp;***&nbsp;***<br>";
-        } else if (i === 3) {
-            row += "*******<br>";
-        }
-        document.write(row);
+    let i = 0;
+    let array = Array();
+    function addNumber() {
+        array[i] = document.getElementById("number").value;
+        i++;
+        document.getElementById("number").value = "";
     }
-
-    // Phần dưới trái tim
-    for (let i = height; i >= 1; i--) {
-        let row = "";
-        for (let j = 0; j < height - i; j++) {
-            row += "&nbsp;";
+    function check() {
+        let soLuong = 0;
+        for(let j = 0; j < array.length; j++) {
+            if (array[j] > 10) {
+                soLuong++;
+            }
         }
-        for (let k = 0; k < 2 * i - 1; k++) {
-            row += "*";
-        }
-        document.write(row + "<br>");
+        document.getElementById("result").innerText = +soLuong;
     }
 </script>
 </body>

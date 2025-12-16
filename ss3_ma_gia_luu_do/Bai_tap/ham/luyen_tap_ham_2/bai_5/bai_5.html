@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số nguyên nhỏ nhất</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b;text-align: center">Tìm số nguyên nhỏ nhất</h1>
+<input id="num1" type="number" placeholder="Nhập vào số nguyên thứ nhất">
+<input id="num2" type="number" placeholder="Nhập vào số nguyên thứ hai">
+<input id="num3" type="number" placeholder="Nhập vào số nguyên thứ ba">
+<button onclick="checkMin()">check</button>
+<p id="result"></p>
+<script>
+    function isMin(number1, number2, number3) {
+        let min = number1;
+        if(number2 < min) {
+            min = number2;
+        }
+        if(number3 < min) {
+            min = number3;
+        }
+        return min;
+    }
+    function checkMin() {
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+        let c = Number(document.getElementById("num3").value);
+        let result = isMin(a, b, c);
+        document.getElementById("result").innerHTML = "Số nhỏ nhất là : " + result;
+    }
+</script>
+</body>
+</html>

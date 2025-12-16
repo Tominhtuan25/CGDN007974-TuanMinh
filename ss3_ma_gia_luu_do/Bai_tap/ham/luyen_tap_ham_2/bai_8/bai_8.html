@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b; text-align: center">Đảo ngược mảng</h1>
+<button onclick="reverseArray()">Đảo mảng</button>
+<p id="result"></p>
+<script>
+  let n = 0;
+  do {
+    n = +prompt("Nhập vào độ dài mảng n")
+  } while (n <= 0 || !Number.isInteger(n));
+  alert(n)
+  let arr = [];
+  for (let i = 1; i <= n; i++) {
+    arr.push(+prompt("Nhập phần tử thứ " + i));
+  }
+  alert(arr);
+  function lastReverse(array) {
+      let newArray =   array.reverse();
+      return newArray;
+  }
+  function reverseArray() {
+      let newarr = arr;
+      let result = [];
+      result = lastReverse(newarr);
+      document.getElementById("result").innerHTML = "Mảng sau khi đảo là :" + result;
+  }
+</script>
+</body>
+</html>

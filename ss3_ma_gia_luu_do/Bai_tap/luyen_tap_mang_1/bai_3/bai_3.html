@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình khởi tao mảng số nguyên,hiển thị giá trị lớn nhất trong mảng, tính giá trị trung bình của các phần từ trong mảng</title>
+</head>
+<body>
+<h1 style="background: #e8f3ff; text-align: center">Chương trình khởi tao mảng số nguyên,hiển thị giá trị lớn nhất trong mảng, tính giá trị trung bình của các phần từ trong mảng</h1>
+<script>
+  let n = parseInt(prompt("Nhập độ dài của mảng:"));
+  let arr = [];
+  for (let i = 1; i <= n; i++) {
+    arr.push (+prompt("Nhập phần tử thứ :" +i));
+  }
+  alert(arr);
+  let max = arr[0];
+  let index = 0;
+  let sum = 0;
+  let avg = 0;
+  for (let k = 0; k < arr.length; k++) {
+    if (arr[k] > max) {
+      max = arr[k];
+      index = k;
+    }
+    sum += arr[k];
+  }
+  avg = sum / arr.length;
+  document.write("Giá trị lớn nhất là :" + max + "<br>");
+  document.write("Vị trí của phần tử lớn nhất là :" + index + "<br>");
+  document.write("Giá trị trung bình :" + avg);
+
+</script>
+</body>
+</html>

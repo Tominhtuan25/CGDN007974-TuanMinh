@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính bình phương</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b; text-align: center">Tính Bình Phương</h1>
+<input id="num" type="number" placeholder="Nhập số cần tính">
+<button onclick="caculate()">Tính bình phương</button>
+<p id="result"></p>
+<script>
+    function square(a) {
+        return a * a;
+    }
+    function caculate() {
+        let number = Number(document.getElementById("num").value);
+        let kq = square(number);
+        document.getElementById("result").innerHTML = "Kết quả là :" + kq;
+    }
+</script>
+</body>
+</html>

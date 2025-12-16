@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên dương</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b;text-align: center">Kiểm tra số nguyên dương</h1>
+<input id="num" type="number" placeholder="Nhập số bất kì:">
+<button onclick="checkNumber()">Check</button>
+<p id="result"></p>
+<script>
+    function isPositiveInteger(number) {
+        if (number > 0 && Number.isInteger(number)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function checkNumber() {
+        let n = Number(document.getElementById("num").value);
+        let result = isPositiveInteger(n);
+        document.getElementById("result").innerHTML = "Kết quả là :" + result;
+    }
+</script>
+</body>
+</html>

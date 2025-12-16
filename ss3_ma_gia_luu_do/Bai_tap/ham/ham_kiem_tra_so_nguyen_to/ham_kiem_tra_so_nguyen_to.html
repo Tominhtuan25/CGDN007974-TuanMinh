@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b; text-align: center">Kiểm tra số nguyên tố</h1>
+<button onclick="checkPrimeList()">Check</button>
+<p id="result"></p>
+<script>
+    function isPrime(num) {
+        if (num < 2 || !Number.isFinite(num) || !Number.isInteger(num) || isNaN(num)) return false;
+        if (num === 2) return true;
+        if (num % 2 === 0) return false;
+        num = Number(num);
+        for (let i = 3; i <= Math.floor(Math.sqrt(num)); i += 2) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    }
+    function checkPrimeList() {
+        let n = +prompt("Enter a number");
+        let primeList = [];
+
+        for (let k = 1; k <= n; k++) {
+            if(isPrime(k)) {
+                primeList.push(k);
+            }
+        }
+        document.getElementById("result").innerHTML = "Các số nguyên tố là : " + primeList;
+    }
+</script>
+</body>
+</html>

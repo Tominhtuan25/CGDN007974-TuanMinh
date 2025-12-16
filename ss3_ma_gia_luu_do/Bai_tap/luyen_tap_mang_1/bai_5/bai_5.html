@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình đếm số nguyên âm trong một mảng</title>
+</head>
+<body>
+<h1 style="background: #ff6b6b; text-align: center">Chương trình đếm số nguyên âm trong một mảng</h1>
+<script>
+    let n = +prompt("Nhập độ dài của mảng số nguyên âm:");
+    let arr = [];
+    for (let i = 1; i <= n; i++) {
+        arr.push(prompt("Nhập vào phần tử thứ" + i));
+    }
+    alert(arr);
+    let count = 0;
+    for (let k = 0; k < arr.length; k++) {
+        if (arr[k] < 0) {
+            count ++;
+        }
+    }
+    document.write("Mảng ban đầu là :" + arr + "<br>");
+    document.write("Số lượng số nguyên âm là :" + count);
+</script>
+</body>
+</html>

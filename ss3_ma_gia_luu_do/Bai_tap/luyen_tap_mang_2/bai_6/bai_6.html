@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình nhập mảng kí tự và thay thế kí tự</title>
+</head>
+<body>
+<h1 style="background-color: #1aaa15; text-align: center">Chương trình nhập mảng kí tự và thay thế kí tự<</h1>
+<button onclick="replace()">Thay thế kí tự</button>
+<p id="result"></p>
+<script>
+function replaceChar(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === ('-')) {
+            newArr.push('_');
+        } else {
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}
+function replace() {
+    let input = prompt("Nhập các kí tự bất kì");
+    let arr = input.split("");
+    let result = replaceChar(arr);
+    document.getElementById("result").innerHTML = "Mảng sau khi thay thế là :" + result;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình khởi tạo mảng số nguyên và đảo ngược các phần tử trong mảng</title>
+</head>
+<body>
+<h1 style="background: #6bf0ff; text-align: center">Chương trình khởi tạo mảng số nguyên và đảo ngược các phần tử trong mảng</h1>
+<script>
+  let n = parseInt(prompt("Nhập độ dài của mảng:"));
+  let arr = [];
+  for (let i = 1; i <= n; i++) {
+    arr.push (+prompt("Nhập phần tử thứ :" +i));
+  }
+  alert(arr);
+  //let reversed = arr.reverse(); lệnh này thay đổi luôn mảng gốc
+  let reversed = arr.slice().reverse();
+
+  document.write("Mảng ban đầu : " + arr + "<br>");
+  document.write("Mảng sau khi đảo ngược là: " + reversed);
+</script>
+</body>
+</html>

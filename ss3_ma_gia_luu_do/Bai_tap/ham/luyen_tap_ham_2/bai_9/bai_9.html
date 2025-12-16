@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra kí tự trong mảng</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b; text-align: center">Kiểm tra kí tự có trong mảng</h1>
+<input id="char" type="text" placeholder="Nhập một kí tự bất kì">
+<button onclick="checkChar()">Kiểm tra</button>
+<p id="result"></p>
+<script>
+  function countChar(arr,hr) {
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === hr) {
+        count++
+      }
+    }
+    return count === 0? -1 : count;
+  }
+  function checkChar() {
+    let array = ["a", "b", "v", "d", "f", "g"];
+    let input = document.getElementById("char").value;
+    let result = countChar(array, input);
+    document.getElementById("result").innerHTML = "Kí tự " + "  " + input +" "+ "xuất hiện" + result + " lần "  + " trong mảng";
+  }
+</script>
+</body>
+</html>

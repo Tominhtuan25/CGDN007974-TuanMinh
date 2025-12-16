@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trinh tạo mảng và sắp xêp mảng theo thứ tự giảm dần</title>
+</head>
+<body>
+<h1 style="background-color: #6b7280; text-align: center">Chương trinh tạo mảng và sắp xêp mảng theo thứ tự giảm dần</h1>
+<script>
+    let n = 0;
+    do {
+        n = +prompt("Nhập độ dài mảng");
+    } while (n !== 10 || !Number.isInteger(n));
+    alert(n);
+    let arr = [];
+    for (let i = 1; i <= n; i++) {
+        arr.push (+prompt("Nhập phần tử thứ :" +i));
+    }
+    alert(arr);
+    arr.sort((a, b) =>b - a);
+    document.write("Mảng sau khi sắp xếp là :" + arr);
+</script>
+</body>
+</html>

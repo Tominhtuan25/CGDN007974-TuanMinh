@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình khởi tạo mảng và kiểm tra số nguyên v có nằm trong mảng không</title>
+</head>
+<body>
+<h1 style="background: chartreuse; text-align: center">Chương trình khởi tạo mảng và kiểm tra số nguyên v có nằm trong mảng không</h1>
+<script>
+    let n = 0;
+    do {
+        n = +prompt("Nhập độ dài mảng");
+    } while (n !== 10 || !Number.isInteger(n));
+    alert(n);
+    let arr = [];
+    for (let i = 1; i <= n; i++) {
+        arr.push (+prompt("Nhập phần tử thứ :" +i));
+    }
+    alert(arr);
+    let v = +prompt("Nhập phần tử số nguyên v");
+    for (let k = 0; k < arr.length; k++) {
+        if (arr[k] === v) {
+            document.write(v + " is in the array");
+            break;
+        }
+        if (k === arr.length - 1) {
+            document.write(v + " is not in the array");
+        }
+    }
+</script>
+</body>
+</html>

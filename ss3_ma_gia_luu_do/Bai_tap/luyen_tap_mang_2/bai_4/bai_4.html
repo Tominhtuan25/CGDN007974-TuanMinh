@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình đếm số từ trong một chuỗi</title>
+</head>
+<body>
+<h1 style="background-color: #1aaa15; text-align: center">Chương trình đếm số từ trong một chuỗi</h1>
+<script>
+    let str = prompt("Nhập vào một chuỗi:");
+    str = str.trim();
+    if (str === "") {
+        document.write("Chuỗi không có từ nào");
+    } else {
+        let arr = str.split(/\s+/);
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] !== "") {
+                count++;
+            }
+        }document.write("Số từ trong chuỗi là :" + count);
+    }
+</script>
+</body>
+</html>
