@@ -18,6 +18,11 @@
     }
 
     function checkTriangle(x, y, z) {
+        if (!Number.isInteger(x) || x <= 0 ||
+            !Number.isInteger(y) || y <= 0 ||
+            !Number.isInteger(z) || z <= 0 ){
+            return "x,y,z phải là các số nguyên dương";
+        };
         if (x + y > z && x + z > y && y + z > x) {
             let arr = [x, y, z];
             arr.sort((a,b) => a - b);
