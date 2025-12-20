@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra hàm</title>
+</head>
+<body>
+<h1 style="background-color: #1aaa15; text-align: center">Kiểm tra hàm</h1>
+<button onclick="input()">Nhập 3 số x,y,z bất kì</button>
+<p id="result"></p>
+<script>
+    function input() {
+        let x = Number(prompt("Nhâp x"));
+        let y = Number(prompt("Nhâp y"));
+        let z = Number(prompt("Nhâp z"));
+
+        document.getElementById("result").innerHTML = checkTriangle(x, y, z);
+    }
+
+    function checkTriangle(x, y, z) {
+        if (x + y > z && x + z > y && y + z > x) {
+            let arr = [x, y, z];
+            arr.sort((a,b) => a - b);
+            if (arr[2]*arr[2] === arr[0]*arr[0] + arr[1]*arr[1]) {
+                return "Đây là 3 cạnh của tam giác vuông" + " và 3 cạnh đó là" + " " + arr;
+            } else {
+                return  "Đây là 3 cạnh của tam giác bình thường" + " và 3 cạnh đó là" + " " + arr;
+            }
+        } else {
+            return  "Đây không phải là 3 cạnh của tam giác";
+        }
+    }
+</script>
+</body>
+</html>

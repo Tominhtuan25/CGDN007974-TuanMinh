@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập, Kiểm tra và hiển thị mảng</title>
+</head>
+<body>
+<h1 style="background-color: palegreen; text-align: center">Kiểm tra mảng</h1>
+<button onclick="check()">Kiểm tra mảng</button>
+<p id="result"></p>
+<script>
+    let n = 0;
+    do {
+        n = +prompt("Nhập độ dài n của mảng");
+    } while (n <= 0 || n > 20 || !Number.isInteger(n));
+    alert(n);
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr.push(Number(prompt("Nhâp phần tử thứ " + i)));
+    }
+    alert(arr);
+
+    function check() {
+        if (arr.length < 2) {
+            document.getElementById("result").innerHTML = "True";
+            return;
+        }
+        const a = arr[1] - arr[0];
+        for (let k = 0; k < arr.length - 1; k++) {
+            if (arr[k + 1] - arr[k] !== a) {
+                document.getElementById("result").innerHTML = "False";
+                return;
+            }
+        }
+        document.getElementById("result").innerHTML = "True";
+    }
+</script>
+</body>
+</html>

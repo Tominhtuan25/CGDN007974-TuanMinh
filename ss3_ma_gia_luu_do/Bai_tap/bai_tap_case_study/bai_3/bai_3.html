@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra mảng đối xứng</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b; text-align: center">Kiểm tra mảng đối xứng</h1>
+<button onclick="checkSymmetry()">Kiểm tra đối xứng</button>
+<p id="array"></p>
+<p id="result"></p>
+<script>
+  let n = 0;
+  do {
+    n = +prompt("Nhập độ dài  của mảng");
+    } while(n !== n || Number.isNaN(n));
+  alert(n);
+  let arr = [];
+  for (let i = 0; i < n; i++) {
+    arr.push(prompt("Nhập vào phần tử thứ " + i));
+  }
+  document.getElementById("array").innerHTML = "Mảng vừa tạo là: " + arr;
+
+  function checkSymmetry() {
+    for (let i = 0; i < arr.length / 2; i++) {
+      if(arr[i] === arr[arr.length - 1 - i]) {
+      } else {
+        document.getElementById("result").innerHTML= "No"
+        return;
+      }
+    }
+    document.getElementById("result").innerHTML= "Ok"
+  }
+</script>
+</body>
+</html>
