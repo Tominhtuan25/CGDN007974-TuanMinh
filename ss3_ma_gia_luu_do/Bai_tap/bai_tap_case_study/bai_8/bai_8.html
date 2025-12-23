@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra mảng số nguyên</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b; text-align: center">Kiểm tra mảng số nguyên</h1>
+<button onclick="handel()">Kiểm tra mảng</button>
+<p id="array"></p>
+<p id="result"></p>
+<script>
+  let n = 0;
+  do {
+    n = +prompt("Nhập độ dài của mảng số nguyên");
+  } while (n <= 0 || isNaN(n) || !Number.isInteger(n));
+  alert(n);
+  let arr = [];
+  for (let i = 0; i < n; i++) {
+    arr.push(Number(prompt("Nhập vào phần tử thứ " + i)));
+  }
+  document.getElementById("array").innerHTML = arr;
+  function isPrime(num) {
+    if ( num <= 1 || isNaN(num) || !Number.isInteger(num) || !Number.isFinite(num)) return false;
+    if (num === 2) return true;
+    if (num % 2 === 0) return false;
+    for (let i = 3; i <= Math.floor(Math.sqrt(num)); i += 2) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  }
+  function checkPrime(array)  {
+    for (let k = 0; k < array.length; k++) {
+      if (!isPrime(array[k])) {
+        return false;
+      }
+    }
+    return true;
+  }
+  function handel() {
+    let showResult = checkPrime(arr);
+    document.getElementById("result").innerHTML = showResult;
+  }
+</script>
+</body>
+</html>
