@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số ngày trong tháng</title>
+</head>
+<body>
+<h1 style="background-color: #1aaa15; text-align: center">Kiểm tra số ngày trong tháng</h1>
+<input id="monthYear" type="text" placeholder="MM/yyyy">
+<button onclick="caculate()">Tính số ngày</button>
+<p id="result"></p>
+<script>
+    function isLeapYear(year) {
+        if (year % 400 === 0) {
+            return true;
+        }
+        if (year % 100 === 0) {
+            return false;
+        }
+        if (year % 4 === 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function caculate() {
+        let input = document.getElementById("monthYear").value;
+        let regex = /^(0[1-9]|1[0-2])\/\d{4}$/;
+        if (!regex.test(input)) {
+            document.getElementById("result").innerHTML = "Hãy nhập theo MM/yyyy";
+            return;
+        }
+        let arr = input.split("/");
+        let month = Number(arr[0]);
+        let year = Number(arr[1]);
+        let numberDay;
+        if (month === 2) {
+            if (isLeapYear(year)) {
+                numberDay = 29;
+            } else {
+                numberDay = 28;
+            }
+        } else if (month === 4 || month === 6 || month === 9 || month === 11) {
+            numberDay = 30;
+        } else {
+            numberDay = 31;
+        }
+        document.getElementById("result").innerHTML = "Tháng " + month + "/" + year + " có : " + numberDay + " ngày ";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo một lớp máy tính</title>
+</head>
+<body>
+<h1 style="background: #ff6b6b; text-align: center">Tạo một lớp máy tính</h1>
+<button onclick="themMoiMayTinh()">Thêm mới máy tính</button>
+<button onclick="hienThiDanhsach()">Hiển thị danh sách</button>
+<p id="result"></p>
+<script>
+    class MayTinh {
+        maMay;
+        tenMay;
+        hangSX;
+        giaBan;
+        constructor(maMay,tenMay,hangSX,giaBan) {
+            this.maMay = maMay;
+            this.tenMay = tenMay;
+            this.hangSX = hangSX;
+            this.giaBan = giaBan;
+        }
+        getMaMay() {
+            return this.maMay;
+        }
+        getTenMay() {
+          return this.tenMay;
+        }
+        getHangSX() {
+            return this.hangSX;
+        }
+        getGiaBan() {
+            return this.giaBan;
+        }
+        setMaMay(maMay) {
+            this.maMay=maMay;
+        }
+        setTenMay(tenMay) {
+            this.tenMay=tenMay;
+        }
+        setHangSX(hangSX) {
+            this.hangSX=hangSX;
+        }
+        setGiaBan(giaBan) {
+            this.giaBan=giaBan;
+        }
+        toString() {
+            let str = "";
+            str += "Mã Máy: " + this.maMay + "\n";
+            str += "Tên Máy: " + this.tenMay + "\n";
+            str += "Hãng sản xuất: " + this.hangSX + "\n";
+            str += "Giá Bán Máy: " + this.giaBan + "\n";
+            str += "________________________________\n";
+            return str;
+        }
+    }
+    let danhSachMayTinh = [];
+    function themMoiMayTinh() {
+        let maMay = prompt("Nhập mã Máy");
+        let tenMay = prompt("Nhập tên Máy");
+        let hangSX = prompt("Nhập hãng sản xuất Máy");
+        let giaBan = prompt("Nhập giá bán Máy");
+        let mt = new MayTinh(maMay,tenMay,hangSX,giaBan);
+        danhSachMayTinh.push(mt);
+        alert("Đã thêm máy tính ");
+    }
+    function hienThiDanhsach() {
+        let display = "";
+        if (danhSachMayTinh.length === 0) {
+            display = "Danh sách máy tính rỗng"
+        } else {
+            for (let i = 0; i < danhSachMayTinh.length; i++) {
+                display += danhSachMayTinh[i].toString();
+            }
+        }
+        document.getElementById("result").innerHTML = display;
+    }
+</script>
+</body>
+</html>
