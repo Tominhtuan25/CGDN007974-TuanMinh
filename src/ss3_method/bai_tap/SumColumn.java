@@ -1,4 +1,4 @@
-package ss4_method.bai_tap;
+package ss3_method.bai_tap;
 import java.util.Scanner;
 public class SumColumn {
     public static void main(String[] args) {
