@@ -41,12 +41,12 @@ public class ImportRepository implements IImportRepository {
 
         List<ImportProduct> list = findAll();
 
-        boolean removed = false;
+        boolean xoa = false;
 
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getMaSanPham().equalsIgnoreCase(maSanPham)) {
                 list.remove(i);
-                removed = true;
+                xoa = true;
                 i--;
 
                 List<String> data = new ArrayList<>();
@@ -57,9 +57,9 @@ public class ImportRepository implements IImportRepository {
 
                 ReadAndWriteFile.writeStringListToCSV(IMPORT_FILE, data, false);
 
-                return removed;
+                return xoa;
             }
         }
-        return removed;
+        return xoa;
     }
 }
