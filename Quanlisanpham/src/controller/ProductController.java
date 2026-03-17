@@ -15,7 +15,12 @@ public class ProductController {
     public void menu() {
        Scanner sc=new Scanner(System.in);
         while (true) {
-            System.out.println("\n1. Thêm\n2. Xóa\n3. Hiển thị\n4. Tìmm\n5. Thoát");
+            System.out.println("------------Quản lý sản phẩm-------------" +
+                    "\n 1.Thêm Mới" +
+                    "\n 2.Xoá" +
+                    "\n 3.Xem danh sách các sản phẩm" +
+                    "\n 4.Tìm kiếm" +
+                    "\n 5.Thoát");
             int choice;
             try {
                 String input = sc.nextLine();
@@ -33,7 +38,6 @@ public class ProductController {
 
             switch (choice) {
                 case 1:
-                    // Thêm sản phẩm import
                     ImportProductView view = new ImportProductView();
                     ImportProduct importProduct = view.input();
                     importService.add(importProduct);
@@ -57,7 +61,6 @@ public class ProductController {
                     break;
 
                 case 3:
-                    // Hiển thị danh sách
                     importService.findAll().forEach(System.out::println);
                     break;
 
