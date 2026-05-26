@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hình vuông</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b; text-align: center">Tính diện tích hình vuông khi biết cạnh a</h1>
+<input id="a_m" type="number" placeholder="Nhập cạnh a(mét)">
+<button onclick="caculate()">CaculateS</button>
+<p id="result"></p>
+<script>
+  function caculate() {
+      let a_m = parseFloat(document.getElementById("a_m").value);
+      if (a_m <= 0) {
+          document.getElementById("result").innerText = "Vui lòng nhập lại cạnh a > 0";
+          return;
+      }
+    let s_m = a_m * a_m;
+    document.getElementById("result").innerHTML = "Diện tích của hình vuông là : " + s_m + "m" + "<sup>2</sup>";
+  }
+</script>
+</body>
+</html>

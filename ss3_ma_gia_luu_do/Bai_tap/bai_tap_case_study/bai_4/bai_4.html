@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra phân số</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b; text-align: center">Kiểm tra phân số</h1>
+<input id="inputX" type="text" placeholder="Nhập x (có dạng x/y)">
+<button onclick="checkFraction()">Kiểm tra phân số</button>
+<p id="result"></p>
+<script>
+    function findUCLN(a,b) {
+        a = Math.abs(a);
+        b = Math.abs(b);
+
+        while (a !== b) {
+            if (a > b) {
+                a -= b;
+            } else {
+                b -= a;
+            }
+        }
+        return a;
+    }
+    function find(x) {
+        if (!x.includes("/")) {
+            return " không phải là phân số";
+        }
+        let arr = x.split("/");
+        let numerator = arr[0];
+        let denominator = arr[1];
+
+        if (isNaN(denominator) || isNaN(numerator)) {
+            return " không phải là phân số"
+        }
+        if (denominator === 0) {
+            return " không phải là phân số"
+        }
+        if (numerator === 0) {
+            return 0;
+        }
+        let c = findUCLN(numerator,denominator);
+        numerator = numerator / c;
+        denominator = denominator / c;
+        return numerator + "/" + denominator;
+    }
+    function checkFraction() {
+        let x = document.getElementById('inputX').value;
+        result = find(x);
+        document.getElementById('result').innerHTML = "Phân số tối giản là :" + result;
+    }
+</script>
+</body>
+</html>

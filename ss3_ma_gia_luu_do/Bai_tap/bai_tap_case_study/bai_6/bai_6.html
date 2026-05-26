@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra mảng số nguyên</title>
+</head>
+<body>
+<h1 style="background-color: #1b263b; text-align: center">Kiểm tra mảng số nguyên</h1>
+<button onclick="handel()">Kiểm tra mảng</button>
+<p id="array"></p>
+<p id="result"></p>
+<script>
+    let n = 0;
+    do {
+        n = +prompt("Nhập độ dài của mảng số nguyên");
+    } while (n <= 0 || isNaN(n) || !Number.isInteger(n));
+    alert(n);
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr.push(Number(prompt("Nhập vào pần tử thứ " + i)));
+    }
+    document.getElementById("array").innerHTML = "Mảng vừa nhập là : " + arr;
+
+    function checkParity() {
+        let odd = false;
+        let even = false;
+        for (let j = 0; j < arr.length; j++) {
+            if (!Number.isInteger(arr[j]) || isNaN(arr[j])) {
+                return "Error Array";
+            }
+        }
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[j] % 2 === 0) {
+                even = true;
+            } else {
+                odd = true;
+            }
+        }
+        if (!odd){
+            return 1;
+        }
+        if (!even) {
+            return 0;
+        }
+        return -1;
+    }
+    function handel() {
+        let showResult = checkParity();
+        document.getElementById("result").innerHTML =  showResult;
+    }
+</script>
+</body>
+</html>

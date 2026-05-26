@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển từ độ C sang độ F</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b; text-align: center">Chuyển từ độ C sang độ F</h1>
+<input id="c" type="number" placeholder="Nhập độ C">
+<button onclick="convert()">Convert</button>
+<p id="result"></p>
+<script>
+  function convert() {
+    let c = parseFloat(document.getElementById("c").value);
+    let f = c * 9 / 5 + 32;
+    document.getElementById("result").innerHTML = "Độ F sau khi chuyển đổi là : " + f;
+  }
+</script>
+</body>
+</html>

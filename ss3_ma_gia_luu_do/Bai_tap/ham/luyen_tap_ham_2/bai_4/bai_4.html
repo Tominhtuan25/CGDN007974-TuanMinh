@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra kí tự số</title>
+</head>
+<body>
+<h1 style="background-color: #6b7280; text-align: center">Kiểm tra kí tự số</h1>
+<button onclick="checkDigit()">Check</button>
+<p id="result"></p>
+<script>
+    function isDigit(char) {
+        return char >= '0' && char <= '9';
+    }
+    function checkDigit() {
+        let input = prompt("Nhập kí tự vào");
+        if (input.length !== 1) {
+            document.getElementById("result").innerHTML = "Nhập đúng 1 kí tự";
+            return;
+        }
+        let result = isDigit(input);
+        document.getElementById("result").innerHTML = "Kết quả là : " + result + "và kí tự đó là " + input;
+    }
+</script>
+</body>
+</html>

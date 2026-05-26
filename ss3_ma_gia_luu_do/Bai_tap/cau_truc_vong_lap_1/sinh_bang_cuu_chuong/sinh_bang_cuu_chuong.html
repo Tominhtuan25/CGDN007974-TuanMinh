@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sinh bảng cửu chương</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b;text-align: center">BẢNG CỬU CHƯƠNG</h1>
+<script>
+    let sOut;
+    sOut = "<table border='1' width='300' cellpadding='3' cellspacing='0'>"
+    for (let i = 1; i <= 10; i++){
+        sOut += "<tr>";
+        for (let j = 1; j <= 10; j++){
+            sOut += "<td>" + j + "*" + i + "=" + i*j + "</td>";
+        }
+        sOut += "</tr>";
+    }
+    sOut += "</table>";
+    document.write(sOut);
+</script>
+</body>
+</html>

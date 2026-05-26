@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giá điện</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      border : 1px solid black;
+      width : 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      text-align : center;
+      width : 50px;
+    }
+  </style>
+</head>
+<body>
+<h1 style="background-color: #1aaa15;text-align: left">Giả sử bảng giá điện bậc thang của Việt Nam như sau:</h1>
+<table>
+  <tr>
+    <th>Bậc</th>
+    <th>Số kWh</th>
+    <th>Giá cước(VND/kWh)</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0-50</td>
+    <td>1678</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>51-100</td>
+    <td>1734</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>101-200</td>
+    <td>2014</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>201-300</td>
+    <td>2536</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>301-400</td>
+    <td>2834</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>>400</td>
+    <td>2927</td>
+  </tr>
+</table>
+<h1 style="background-color: #1aaa15; text-align: left">Tính giá điện của hộ gia đình:</h1>
+<input id="usage" type="number" placeholder="input usage(kWh)">
+<button onclick="caculateBill()">Caculate</button>
+<p id="result"></p>
+<script>
+  function caculateBill() {
+    let usage = parseFloat(document.getElementById("usage").value);
+    let money = "";
+    if (usage <= 50) {
+      money = usage * 1678;
+    } else if (usage <= 100) {
+      money = 50 * 1678 + (usage - 50) * 1734;
+    } else if (usage <= 200) {
+      money = 50 * 1678 + 50 * 1734 + (usage - 100) * 2014;
+    } else if (usage <= 300) {
+      money = 50 * 1678 + 50 * 1734 + 100 * 2014 + (usage - 200) * 2536;
+    } else if (usage <= 400) {
+      money = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + (usage - 300) * 2834;
+    } else {
+      money = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + 100 * 2834 + (usage - 400) * 2927;
+    }
+    document.getElementById("result").innerHTML = "Electricity bill is :" + money + "VND";
+  }
+</script>
+</body>
+</html>

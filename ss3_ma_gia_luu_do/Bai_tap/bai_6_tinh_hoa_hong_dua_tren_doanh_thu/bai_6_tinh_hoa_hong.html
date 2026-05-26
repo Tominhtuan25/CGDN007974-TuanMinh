@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh hoa hồng của công ty Logistic</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 100%;
+            padding: 2px;
+        }
+        th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 2px;
+            text-align: center;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="background-color: #1aaa15;text-align: center">Tính hoa hồng công ty Logistic</h1><br>
+<h2 style="background-color:cornsilk; text-align: left">Dưới đây là bảng doanh thu và phần trăm hoa hồng</h2>
+<table>
+    <tr>
+        <th>Company</th>
+        <th>Sales(VND)</th>
+        <th>Commission(%)</th>
+    </tr>
+    <tr>
+        <td rowspan="4">Fast ship logistic</td>
+        <td>Under 5.000000</td>
+        <td>3%</td>
+    </tr>
+    <tr>
+        <td>Under 10.000000</td>
+        <td>5%</td>
+    </tr>
+    <tr>
+        <td>Under 20.000000</td>
+        <td>10%</td>
+    </tr>
+    <tr>
+        <td>From 20.000000 and up</td>
+        <td>15%</td>
+    </tr>
+</table><br><br>
+<h2 style="background-color:cornsilk; text-align: left">Tính hoa hồng</h2>
+<input id="sales" type="number" placeholder="input Sales" min="0">
+<button onclick="caculate()">Commission Caculation</button>
+<p id="result" style="color: orangered">The commission earned is: </p>
+<script>
+    function caculate(){
+        let sales = parseFloat(document.getElementById('sales').value);
+        let commission = "";
+        if (sales < 5000000) {
+            commission = sales * 0.03;
+        } else if (sales < 10000000) {
+            commission = sales * 0.05;
+        } else if (sales < 20000000) {
+            commission = sales * 0.10;
+        } else {
+            commission = sales * 0.15;
+        }
+        document.getElementById('result').innerHTML = "The commission earned is: " + commission;
+    }
+</script>
+</body>
+</html>

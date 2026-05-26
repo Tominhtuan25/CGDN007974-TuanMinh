@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chèn dấu gạch nối vào giữa số chẵn</title>
+</head>
+<body style="background-color: #ff6b6b;text-align: center">
+<h1 style="background-color: #6bf0ff;text-align: center">Chèn dấu giữa các số chẵn</h1>
+<script>
+  let chuoiSo = prompt("Nhập một chuỗi số bất kì:");
+  let result = "";
+  for (let i = 0; i < chuoiSo.length; i++) {
+    let current = chuoiSo[i];
+    let next = chuoiSo[i + 1];
+    result += current;
+    if (current % 2 === 0 && next % 2 === 0) {
+      result += "-";
+    }
+  }
+  document.write("kết quả là : " + result + "<br>");
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi suất ngân hàng</title>
+</head>
+<body>
+<h1 style="background-color: #1b263b;text-align: center">Lãi suất ngân hàng Sacombank</h1>
+<input id="principal" type="number" placeholder="Nhập số vốn ban đầu(principal)">
+<input id="months" type="number" placeholder="Input Monthly">
+<input id="rate" type="number" placeholder="Input Monthly Rate(%)">
+<button onclick="caculateInterest()">Caculate Interest</button>
+<p id="result" style="background-color: chartreuse">Tổng số tiền nhận được sau khi gởi ngân hàng:</p>
+<script>
+    function caculateInterest() {
+        let principal = parseFloat(document.getElementById("principal").value);
+        let months = parseInt(document.getElementById("months").value);
+        let rate = parseFloat(document.getElementById("rate").value);
+        let total = principal;
+        if (isNaN(principal) || isNaN(months) || isNaN(rate) || principal <= 0 || rate <= 0 || months <= 0) {
+            document.getElementById("result").innerHTML = "Please enter a valid number for all fields(>0)";
+            return;
+        }
+        for (let i = 1; i <= months; i++) {
+            let interest = total * (rate / 100);
+            total += interest;
+        }
+        document.getElementById("result").innerHTML = "Tổng số tiền nhận được sau khi gởi " + months +" " + "tháng là: " + total.toFixed(3);
+    }
+</script>
+</body>
+</html>

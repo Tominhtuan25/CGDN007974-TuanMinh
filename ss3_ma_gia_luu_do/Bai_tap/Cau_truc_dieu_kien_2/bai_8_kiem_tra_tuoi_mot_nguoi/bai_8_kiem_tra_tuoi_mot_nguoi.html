@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nhập vào có phải tuổi của một người</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b;text-align: center">Kiểm tra số nguyên nhập vào có phải là tuổi của một người không?</h1>
+<input id="z" type="number" placeholder="Nhập số nguyên bất kì">
+<button onclick="checkZ()">Check Z</button>
+<p id="result"></p>
+<script>
+  function checkZ() {
+    let z = parseInt(document.getElementById("z").value);
+    if (z > 0 && z < 120) {
+      document.getElementById("result").innerText = "Đây là tuổi của một người và số tuổi là : " + z;
+    }
+    else {
+      document.getElementById("result").innerText = "Đây không phải là tuổi của môt người và z = " + z;
+    }
+  }
+</script>
+</body>
+</html>

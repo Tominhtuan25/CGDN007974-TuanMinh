@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>Câu lệnh điều kiện</h1>
+<h3>Câu lệnh điều khiển - Control Flow Statements</h3>
+<p>Là loại câu lệnh dùng để điều khiển luồng thực thi của chương trình</p>
+<p>Có 3 loai câu lệnh điều khiển:</p>
+<ol>
+  <li>Câu lệnh điều kiện - Conditional Statement</li>
+  <li>Câu lệnh lặp - Loop Statements</li>
+  <li>Câu lệnh nhảy - Jump Statement</li>
+</ol>
+
+<h3>Câu lệnh điều kiện: </h3>
+
+<script>
+  //Các loại câu lệnh if
+  // Loại 1: Câu lệnh if khuyết
+  //Ví dụ: Cho người dùng nhập vào bán kính. nếu bán kính >=0 thì thực hiện tính diện tích và in ra màn hình
+
+  // let radius = parseFloat(prompt("Nhập vào bán kính cần tính: "));
+  // if(radius >= 0){
+  //     //tính diện tích
+  //     let area = radius*radius*Math.PI;
+  //     //in ra màn hình
+  //     document.writeln("Diện tích của hình tròn là: " + area);
+  // }
+
+  //Loai 2: Câu lệnh if-else đầy đủ
+  //Ví dụ: Cho người dùng nhập vào bán kính.
+  // Nếu bán kính >=0 thì thực hiện tính diện tích và in ra màn hình
+  // Nếu không thì hiển  thị là người dùng nhập sai giá trị
+
+  // let radius = parseFloat(prompt("Nhập vào bán kính cần tính: "));
+  // if(radius >= 0){
+  //     //tính diện tích
+  //     let area = radius*radius*Math.PI;
+  //     //in ra màn hình
+  //     document.writeln("Diện tích của hình tròn là: " + area);
+  // }else {
+  //     document.writeln("Bạn đã nhập bán kính không đúng, yêu cầu kiểm tra lại!!")
+  // }
+
+
+  //Loại 4: If-else bậc thang
+  //Ví dụ: cho người dùng nhập vào điểm thi của sinh viên với thang điểm 100
+  // Nếu điểm >= 90 thì in ra màn hình sinh viên đạt loại Xuất Sắc
+  // Nếu điểm >= 80 thì in ra màn hình sinh viên đạt loại Giỏi
+  // Nếu điểm >= 65 thì in ra màn hình sinh viên đạt loại Khá
+  // Nếu điểm >= 50 thì in ra màn hình sinh viên đạt loại Trung Bình
+  // Nếu điểm >= 35 thì in ra màn hình sinh viên đạt loại Trung Yếu
+  // Nếu điểm < 35 thì in ra màn hình sinh viên đạt loại Trung Kém
+
+  // let mark = parseInt(prompt("Nhập điểm của sinh viên: "));
+  // if (mark < 100 && mark > 0) {
+  //     if (mark >= 90){
+  //         document.writeln("Sinh viên xếp hạng 'Xuất Sắc'");
+  //     }else if(mark >= 80){
+  //         document.writeln("Sinh viên xếp hạng 'Giỏi'");
+  //     }else if(mark >= 65){
+  //         document.writeln("Sinh viên xếp hạng 'Khá'");
+  //     }else if (mark >= 50){
+  //         document.writeln("Sinh viên xếp hạng 'Trung Bình'");
+  //     }else if(mark >= 35){
+  //         document.writeln("Sinh viên xếp hạng 'Yếu'");
+  //     }else{
+  //         document.writeln("Sinh viên xếp hạng 'Kém'");
+  //     }
+  // }else {
+  //     document.writeln("Bạn nhập điểm không chính xác!!")
+  // }
+
+
+  //Đặc biệt lưu ý khi tính toán và so sánh 2 số thực
+  // let x = 1;
+  // let y = 1 - 0.1 - 0.1 - 0.1;
+  // if (y === 0.7){
+  //     document.writeln("Giá trị của y là 0.7" + y);
+  // }else {
+  //     document.writeln("Giá trị của y " + y);
+  // }
+
+  //Switch-case
+  //Cho người dùng nhập vào 1 số (từ 1 đến 10)
+  //Chuyễn số đó thành chữ
+  let number = parseInt(prompt("Nhập vào 1 số nguyên từ 1 -> 5: "));
+  switch (number) {
+    case 1:
+      document.writeln("MỘT");
+      break;
+    case 2:
+      document.writeln("HAI");
+      break;
+    case 3:
+      document.writeln("BA");
+      break;
+    case 4:
+      document.writeln("BỐN");
+      break;
+    case 5:
+      document.writeln("NĂM");
+      break;
+    default:
+      document.writeln("Số bạn nhập không đúng!!")
+  }
+
+  // Nếu trong case không có break thì mặc định khối case tiếp theo là đúng
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích và chu vi hình tròn</title>
+</head>
+<body>
+<h1 style="background-color: #6bf0ff; text-align: center">Tính diện tích và chu vi hình tròn</h1>
+<input id="radius" type="number" placeholder="Nhập giá trị của bán kính">
+<button onclick="areaCaculate()">Tính diện tích</button>
+<button onclick="circumferenceCaculate()">Tính chu vi</button>
+<p id="result"></p>
+<script>
+    function area(a) {
+        return  Math.PI * a * a;
+    }
+    function circumference(b) {
+        return  2 * Math.PI * b;
+    }
+    function areaCaculate() {
+        let x = Number(document.getElementById("radius").value);
+        let showResult = area(x);
+        document.getElementById("result").innerHTML = "Diện tích của hình tròn là : " + showResult;
+    }
+    function circumferenceCaculate() {
+        let x = Number(document.getElementById("radius").value);
+        let showResult = circumference(x);
+        document.getElementById("result").innerHTML = "Chu vi của hình tròn là : " + showResult;
+    }
+</script>
+</body>
+</html>

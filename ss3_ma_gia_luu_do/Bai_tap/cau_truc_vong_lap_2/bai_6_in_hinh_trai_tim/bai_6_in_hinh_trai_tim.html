@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm số lớn hơn 10 trong mảng</title>
+</head>
+<body>
+<!--<script>-->
+<!--    let array=[1,6,75,89,65,44,2,1,6,8];-->
+<!--    let soLuong = 0;-->
+<!--    for(let i=0;i<array.length;i++){-->
+<!--        if(array[i]>10){-->
+<!--            soLuong++;-->
+<!--            document.write(i+", ");-->
+<!--        }-->
+<!--    }-->
+<!--    document.write(" số lượng số lướn hơn 10 la: " +soLuong);-->
+<!--</script>-->
+
+<input id="number" placeholder="enter the number">
+<button onclick="addNumber()" value="addNumber">add</button>
+<button onclick="check()" value="check">check</button>
+<h3 id="result"> kết quả: </h3>
+<script>
+    let i = 0;
+    let array = Array();
+    function addNumber() {
+        array[i] = document.getElementById("number").value;
+        i++;
+        document.getElementById("number").value = "";
+    }
+    function check() {
+        let soLuong = 0;
+        for(let j = 0; j < array.length; j++) {
+            if (array[j] > 10) {
+                soLuong++;
+            }
+        }
+        document.getElementById("result").innerText = +soLuong;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh diện tích hình tam giác vuông</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b; text-align: center">Tính diện tích hình  tam giác vuông khi biết  2 cạnh a,b</h1>
+<input id="a_cm" type="number" placeholder="Nhập cạnh a(cm)">
+<input id="b_cm" type="number" placeholder="Nhập cạnh b(cm)">
+<button onclick="caculate()">CaculateS</button>
+<p id="result"></p>
+<script>
+    function caculate() {
+        let a_cm = parseFloat(document.getElementById("a_cm").value);
+        let b_cm = parseFloat(document.getElementById("b_cm").value);
+        if (a_cm <= 0 || b_cm <= 0 || isNaN(a_cm) || isNaN(b_cm)) {
+            document.getElementById("result").innerText = "Vui lòng nhập lại cạnh a,b > 0";
+            return;
+        }
+        let s_cm = (a_cm * b_cm) / 2;
+        document.getElementById("result").innerHTML = "Diện tích của hình tam  giác vuông là : " + s_cm + "cm" + "<sup>2</sup>";
+    }
+</script>
+</body>
+</html>

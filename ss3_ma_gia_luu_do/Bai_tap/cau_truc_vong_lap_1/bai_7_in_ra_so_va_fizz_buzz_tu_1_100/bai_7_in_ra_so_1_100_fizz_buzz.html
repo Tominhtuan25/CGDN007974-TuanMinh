@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In ra số từ 1 đến 100_Fizz_Buzz</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b;text-align: center">Chương trình in ra số từ 1 đến 100 là in ra Fizz, Buzz</h1>
+<script>
+    let n = 1;
+    while (n <= 100) {
+        if (n % 3 === 0 && n % 5 === 0) {
+            document.writeln("FizzBuzz<br>");
+        } else if (n % 5 === 0) {
+            document.writeln("Buzz<br>");
+        } else if (n % 3 === 0) {
+            document.writeln("Fizz<br>");
+        } else {
+            document.writeln(n+"<br>");
+        }
+        n++
+    }
+</script>
+</body>
+</html>

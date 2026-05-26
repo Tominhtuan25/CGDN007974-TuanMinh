@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra năm nhuận</title>
+</head>
+<body>
+<script>
+    let year = parseInt(window.prompt("Enter year: "));
+    if (year % 4 == 0) {
+        if (year % 100 == 0) {
+            if(year % 400 == 0){
+                document.write(" is a leap year" + year);
+            } else {
+                document.write(" is Not a leap year " + year);
+            }
+        } else {
+            document.write(" is a leap year " + year);
+        }
+    } else {
+        document.write(" is NOt a leap year " + year);
+    }
+</script>
+</body>
+</html>

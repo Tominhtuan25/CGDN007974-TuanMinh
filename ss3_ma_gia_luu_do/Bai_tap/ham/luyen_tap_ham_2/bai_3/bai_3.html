@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thừa</title>
+</head>
+<body>
+<h1 style="background-color: #1aaa15; text-align: center">Tính giai thừa</h1>
+<input id="num" type="number" placeholder="Nhập số cần tính giai thừa">
+<button onclick="caculate()">Tính giai thừa</button>
+<p id="result"></p>
+<script>
+    function factorial(number) {
+        let factorial = 1;
+        if (number === 0) {
+            factorial = 1;
+            return factorial;
+        }
+        if (isNaN(number) || !Number.isInteger(number) || number < 0) {
+            alert("Hãy nhập số lớn hơn 0");
+            return null;
+        } else {
+            for (let i = 1; i <= number; i++) {
+                factorial *= i;
+            }
+            return factorial;
+        }
+    }
+    function caculate() {
+        let n = Number(document.getElementById("num").value);
+        let fac = factorial(n);
+        document.getElementById("result").innerHTML = "Giai thừa của " + n + " là " + fac
+    }
+</script>
+</body>
+</html>

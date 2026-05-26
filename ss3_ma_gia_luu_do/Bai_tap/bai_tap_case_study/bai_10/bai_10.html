@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra kí tự nguyên âm</title>
+</head>
+<body>
+<h1 style="background: #1aaa15;text-align: center">Kiểm tra kí tự nguyên âm</h1>
+<input id="inputStr" type="text" placeholder="Nhập chuỗi">
+<button onclick="handel()">Kiểm tra</button>
+<div id="result"></div>
+<script>
+    function checkString(str) {
+        let nguyenAm = ["a", "e", "o", "i", "u"];
+        let arrayResult = [];
+        str = str.toLowerCase();
+        for (let i = 0; i < str.length; i++) {
+            if (nguyenAm.includes(str[i]) && !arrayResult.includes(str[i])) {
+                arrayResult.push(str[i]);
+            }
+        }
+        return arrayResult;
+    }
+    function handel() {
+        let str = document.getElementById('inputStr').value;
+        let showResult = checkString(str);
+        document.getElementById("result").innerHTML ="Mảng nguyên âm trong chuỗi cần kiểm tra là :" +  "[" + showResult.join(" , ") + "]";
+    }
+</script>
+</body>
+</html>

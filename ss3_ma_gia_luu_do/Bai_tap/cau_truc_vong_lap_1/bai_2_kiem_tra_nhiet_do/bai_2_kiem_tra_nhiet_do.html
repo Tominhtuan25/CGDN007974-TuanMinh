@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra nhiệt độ</title>
+</head>
+<body>
+<h1 style="text-align: center; background-color: #1aaa15">Kiểm tra nhiệt độ</h1>
+<input id="temperature" type="number" placeholder="Nhập nhiệt độ hiện tại">
+<button onclick="check()">Check</button>
+<p id="result"></p>
+<script>
+    function check() {
+        let temperature = parseFloat(document.getElementById("temperature").value);
+        let alert = "";
+        if (temperature > 100) {
+            alert = "Hãy giảm nhiệt độ.";
+        }else if (temperature > 20) {
+            alert = "Hãy tăng nhiệt độ.";
+        }else {
+            alert = "Nhiệt độ bình thường.";
+        }
+        document.getElementById("result").innerHTML = alert;
+    }
+</script>
+</body>
+</html>

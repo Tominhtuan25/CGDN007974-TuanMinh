@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số hoàn hảo</title>
+</head>
+<body>
+<h1 style="background-color: #1aaa15; text-align: center">Kiểm tra số hoàn hảo</h1>
+<input type="number" id="number" placeholder="Nhập số nguyên dương">
+<button onclick="check()">Check</button>
+<p id="result"></p>
+<script>
+    function isPerfectNumber(n) {
+        let sum = 0;
+        let i = 0;
+        let count = 0;
+        for (i = 1; i < n; i++) {
+            if (n % i === 0) {
+                count++;
+                sum += i;
+            }
+        }
+        if (sum === n) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function check() {
+        let n = Number(document.getElementById("number").value);
+        if (n <= 0 || !Number.isInteger(n) || isNaN(n)) {
+            document.getElementById("result").innerHTML = "Hãy nhập số nguyên dương";
+            return;
+        }
+        let result = isPerfectNumber(n);
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</body>
+</html>

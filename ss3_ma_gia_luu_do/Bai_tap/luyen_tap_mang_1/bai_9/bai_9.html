@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mảng hai chiều</title>
+</head>
+<body>
+<h1 style="background-color: #ff6b6b; text-align: center">Tao mảng hai chiều</h1>
+<script>
+  let a = [];
+  let b = [];
+  let c = [];
+  let n = parseInt(prompt("Nhập độ dài của mảng:"));
+  for (let i = 1; i <= n; i++) {
+    a.push (+prompt("Nhập phần tử thứ :" +i));
+  }
+  document.write("Mảng a là :" + a + "<br>");
+  for (let i = 1; i <= n; i++) {
+    b.push (+prompt("Nhập phần tử thứ :" +i));
+  }
+  document.write("Mảng a là :" + b + "<br>");
+  c = b.concat(a);
+  document.write("Mảng c là :" + c + "<br>");
+</script>
+</body>
+</html>

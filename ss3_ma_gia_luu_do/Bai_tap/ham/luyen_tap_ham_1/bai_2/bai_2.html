@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo hàm nhận vào một đối số dạng số, tăng giá trị của đối số lên 1 và trả về giá trị sau khi tăng</title>
+</head>
+<body>
+<h1 style="background-color: #1aaa15; text-align: center">Tạo hàm nhận vào một đối số dạng số, tăng giá trị của đối số lên 1 và trả về giá trị sau khi tăng</h1>
+<input id="number" type="number" placeholder="Nhập số vào">
+<button onclick="result()">Result</button>
+<p id="result"></p>
+<script>
+function increase(num) {
+    return num + 1;
+}
+function result() {
+    let n = Number(document.getElementById("number").value);
+    let showResult = increase(n);
+    document.getElementById("result").innerText = "Kết quả là : " +  showResult;
+}
+</script>
+</body>
+</html>

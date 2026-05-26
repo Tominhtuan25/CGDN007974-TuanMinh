@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra cặp phần tử trong mảng số nguyên chẵn</title>
+</head>
+<body>
+<h1 style="background-color: #6bf0ff; text-align: center">Kiểm tra cặp phần tử liền kề nhau trong mảng số nguyên chẵn</h1>
+<button onclick="handel()">Check phần tử</button>
+<p id="array"></p>
+<p id="result"></p>
+<script>
+    let n = 0;
+    do {
+        n = +prompt("Nhập độ dài của mảng")
+    } while (n <= 0 || n % 2 !== 0 || isNaN(n) || !Number.isInteger(n));
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr.push(Number(prompt("Nhập vào phần tử thứ " + i)));
+    }
+    document.getElementById("array").innerHTML = arr;
+    function check(array) {
+        for (let i = 0; i < array.length; i += 2) {
+            if (array[i] < array[i + 1]) {
+                return "OK";
+            }
+        }
+        return "NO";
+    }
+    function handel() {
+        let showResult = check(arr);
+        document.getElementById("result").innerHTML = showResult;
+    }
+</script>
+</body>
+</html>
